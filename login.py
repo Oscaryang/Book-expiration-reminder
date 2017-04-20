@@ -112,9 +112,9 @@ def get_detail_data(item_url):
 
 
 def send_email(to_addr,deadline,title,item_url, day,name,rec):
-    from_addr = '286073725@qq.com'
-    password = '*24865TFBHg*'
-    to_addr = '202739494@qq.com'
+    from_addr = 'XXX@qq.com'
+    password = 'XXX'
+    to_addr = 'SSS@qq.com'
     smtp_server = 'smtp.qq.com'
 
     msg=MIMEText('''hello:\n\n    《{}》这本书还有{}天到期，deadline为{}，尽快去还吧！\n      点击链接查看图书详情{}\n     ----------------------------------\n      注意：为了防止被识别为垃圾邮件，以下内容为自动添加，同时供您查看！\n      借阅该书的人还借了什么书：\n{}\n{}\n{}\n{}\n{}\n{}\n{}'''.format(title,day,deadline,item_url,rec[0],rec[1],rec[2],rec[3],rec[4],rec[5],rec[6]), 'plain', 'utf-8')
@@ -188,11 +188,11 @@ if __name__ == '__main__':
         if int(now_month) == int(yinghuan_month) - 1:
             day = 30 - int(now_day) + int(yinghuan_day)
             if day < 20:
-                send_email('202739494@qq.com',deadline,title,item_url, day,name,rec)
+                send_email('SSS@qq.com',deadline,title,item_url, day,name,rec)
         elif now_month == yinghuan_month:
             day = int(yinghuan_day) - int(now_day)
             if day < 20:
-                send_email('202739494@qq.com',deadline,title,item_url, day,name,rec)
+                send_email('SSS@qq.com',deadline,title,item_url, day,name,rec)
                         # time.sleep(120)
 
 
